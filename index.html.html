@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laya Consulting — Email &amp; SMS Marketing for Ecom Brands</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000000;
+  --bg-alt:#0f0f0f;
+  --card:#141414;
+  --card-border:rgba(255,255,255,.07);
+  --cyan:#14BFE6;
+  --cyan-dark:#0D99BC;
+  --cyan-dim:rgba(20,191,230,.12);
+  --white:#ffffff;
+  --dim:rgba(255,255,255,.65);
+  --dim2:rgba(255,255,255,.38);
+  --radius-card:18px;
+  --radius-btn:999px;
+  --maxw:1200px;
+  --font:'Inter','DM Sans',system-ui,-apple-system,sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:var(--font);
+  font-size:16px;
+  font-weight:400;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+  position:relative;
+}
+body::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:760px;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(ellipse 700px 420px at 22% 8%, rgba(20,191,230,.16) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 380px at 78% 0%, rgba(255,255,255,.05) 0%, transparent 60%),
+    radial-gradient(ellipse 900px 500px at 50% 60%, rgba(20,191,230,.05) 0%, transparent 70%);
+  filter:blur(10px);
+  -webkit-mask-image:linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+  mask-image:linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:var(--font);}
+
+.container{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 clamp(18px,4vw,48px);
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+}
+
+/* ---------- FOCUS VISIBILITY ---------- */
+a:focus-visible,button:focus-visible,input:focus-visible{
+  outline:2px solid var(--cyan);
+  outline-offset:3px;
+  border-radius:6px;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+.eyebrow{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--cyan);
+  text-align:center;
+  margin:0 0 14px;
+}
+h1,h2,h3,h4{font-family:var(--font);font-weight:700;letter-spacing:-.02em;}
+h2{font-size:clamp(26px,3.8vw,42px);line-height:1.15;text-align:center;}
+h3{font-size:clamp(18px,2vw,22px);line-height:1.2;letter-spacing:-.01em;}
+p{color:var(--dim);line-height:1.65;}
+
+.section-pad{padding:clamp(64px,8vw,100px) 0;}
+.section-head{max-width:720px;margin:0 auto;text-align:center;}
+.section-head h2{margin-top:0;}
+.center-btn{text-align:center;margin-top:36px;margin-bottom:0;}
+
+/* ---------- SCROLL-REVEAL ---------- */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .7s var(--ease), transform .7s var(--ease);
+}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+}
+
+/* ---------- BUTTONS ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-family:var(--font);
+  font-weight:600;
+  font-size:15px;
+  letter-spacing:-.01em;
+  padding:14px 32px;
+  border-radius:var(--radius-btn);
+  border:1.5px solid var(--cyan);
+  background:var(--cyan);
+  color:#000000;
+  cursor:pointer;
+  transition:transform .2s var(--ease), background .2s var(--ease);
+  white-space:nowrap;
+  position:relative;
+  overflow:visible;
+  animation:btn-pulse 2.6s ease-in-out infinite;
+}
+.btn::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.12) 0%,transparent 60%);
+  border-radius:inherit;pointer-events:none;
+}
+@keyframes btn-pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(20,191,230,.35), 0 8px 24px rgba(20,191,230,.18);}
+  50%{box-shadow:0 0 22px 6px rgba(20,191,230,.55), 0 8px 30px rgba(20,191,230,.32);}
+}
+@media (prefers-reduced-motion: reduce){
+  .btn{animation:none;}
+}
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 28px rgba(20,191,230,.3);
+  background:color-mix(in srgb, var(--cyan) 90%, white);
+  animation-play-state:paused;
+}
+.btn:active{transform:translateY(0);}
+
+.btn.btn-ghost{
+  background:#000000;
+  border:1.5px solid var(--cyan);
+  color:var(--cyan);
+  animation:none;
+}
+.btn.btn-ghost::after{display:none;}
+.btn.btn-ghost:hover{
+  background:var(--cyan-dim);
+  box-shadow:0 6px 24px rgba(20,191,230,.18);
+}
+
+.btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* ---------- GLOW ---------- */
+.glow{
+  position:absolute;pointer-events:none;
+  filter:blur(80px);opacity:.4;
+  background:radial-gradient(circle, var(--cyan) 0%, rgba(20,191,230,0) 70%);
+  z-index:0;
+}
+
+/* ---------- HEADER ---------- */
+header{
+  position:sticky;top:18px;z-index:100;
+  background:transparent;
+  pointer-events:none;
+  padding:0 clamp(14px,3vw,40px);
+}
+.nav-wrap{
+  max-width:980px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(10,10,10,.5);
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.08);
+  padding:14px 14px 14px 26px;
+  box-shadow:
+    0 12px 40px rgba(0,0,0,.5),
+    0 1px 0 rgba(255,255,255,.04) inset;
+  pointer-events:all;
+  backdrop-filter:blur(28px) saturate(160%);
+  -webkit-backdrop-filter:blur(28px) saturate(160%);
+  gap:20px;
+  transition:background .3s, border-color .3s;
+}
+.logo{
+  font-weight:700;font-size:18px;letter-spacing:-.02em;
+  display:flex;align-items:center;gap:9px;
+  color:#fff;white-space:nowrap;flex-shrink:0;
+}
+.logo span{color:rgba(255,255,255,.5);font-weight:400;}
+nav ul{display:flex;gap:4px;list-style:none;}
+nav a{
+  font-size:15px;font-weight:500;
+  color:rgba(255,255,255,.6);
+  padding:10px 16px;border-radius:999px;
+  transition:color .15s, background .15s;
+}
+nav a:hover{color:#fff;background:rgba(255,255,255,.06);}
+.nav-actions{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.burger{
+  display:none;flex-direction:column;gap:5px;
+  cursor:pointer;background:none;border:none;padding:6px;
+}
+.burger span{width:24px;height:2px;background:#fff;display:block;border-radius:2px;transition:all .25s;}
+.btn-small{padding:13px 26px;font-size:15px;}
+
+/* ---------- MOBILE NAV ---------- */
+.mobile-nav{
+  position:fixed;inset:0;
+  background:rgba(10,10,10,.97);
+  backdrop-filter:blur(20px);
+  z-index:200;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;
+  transform:translateY(-120%);transition:transform .35s var(--ease);
+  visibility:hidden;
+}
+.mobile-nav.open{transform:translateY(0);visibility:visible;}
+.mobile-nav a{font-size:24px;font-weight:600;letter-spacing:-.02em;color:rgba(255,255,255,.85);}
+.mobile-nav a:hover{color:var(--cyan);}
+.mobile-nav .close-btn{
+  position:absolute;top:22px;right:24px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  color:#fff;font-size:20px;cursor:pointer;
+  width:38px;height:38px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  padding:clamp(120px,14vw,180px) 0 clamp(60px,6vw,80px);
+  text-align:center;
+  overflow:hidden;
+  background:transparent;
+}
+.hero-mesh{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 700px 420px at 22% 8%, rgba(20,191,230,.1) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 380px at 78% 0%, rgba(255,255,255,.04) 0%, transparent 60%);
+  filter:blur(10px);
+  animation:mesh-drift 22s var(--ease) infinite alternate;
+}
+@keyframes mesh-drift{
+  from{transform:translate3d(0,0,0) scale(1);}
+  to{transform:translate3d(-2%,1%,0) scale(1.04);}
+}
+@media (prefers-reduced-motion: reduce){
+  .hero-mesh{animation:none;}
+}
+.hero .glow{display:none;}
+.hero-inner{position:relative;z-index:2;max-width:880px;margin:0 auto;padding:0 clamp(18px,4vw,32px);}
+.hero h1{
+  font-size:clamp(34px,6vw,68px);
+  line-height:1.08;
+  letter-spacing:-.03em;
+  font-weight:800;
+}
+.hero h1 .circled{position:relative;display:inline-block;}
+.hero h1 .circled svg{
+  position:absolute;left:-8%;top:-22%;width:116%;height:144%;
+  stroke:rgba(20,191,230,.55);fill:none;stroke-width:2;
+}
+.hero p.sub{
+  max-width:560px;margin:24px auto 0;
+  font-size:clamp(16px,2vw,19px);
+  color:rgba(255,255,255,.7);
+  line-height:1.6;
+}
+.hero .btn-row{margin-top:36px;}
+
+/* marquee strip */
+.logo-strip{margin-top:clamp(48px,6vw,72px);position:relative;}
+.logo-strip:before,.logo-strip:after{
+  content:'';position:absolute;top:0;bottom:0;width:clamp(40px,10vw,120px);z-index:2;pointer-events:none;
+}
+.logo-strip:before{left:0;background:linear-gradient(90deg,var(--black),transparent);}
+.logo-strip:after{right:0;background:linear-gradient(270deg,var(--black),transparent);}
+.marquee{display:flex;overflow:hidden;width:100%;}
+.marquee .track{display:flex;gap:12px;flex-shrink:0;animation:scroll-left 38s linear infinite;}
+.marquee.reverse .track{animation:scroll-right 42s linear infinite;}
+@keyframes scroll-left{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes scroll-right{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+@media (prefers-reduced-motion: reduce){
+  .marquee .track{animation:none;}
+}
+
+.ad-card{
+  width:200px;height:340px;border-radius:14px;flex-shrink:0;
+  background:linear-gradient(160deg,#161616,#0d0d0d);
+  border:1px solid var(--card-border);
+  display:flex;align-items:flex-end;padding:16px;
+}
+.ad-card span{font-weight:600;font-size:13px;color:rgba(255,255,255,.7);}
+.ad-card:nth-child(odd){background:linear-gradient(160deg,#161616,#101000);}
+.ad-card:nth-child(3n){background:linear-gradient(160deg,#0e1a0e,#0a1200);}
+.ad-card:nth-child(4n){background:linear-gradient(160deg,#1a1800,#111000);}
+
+/* ---------- HOW WE HELP ---------- */
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:48px;
+}
+.feature{
+  padding:24px;border-radius:var(--radius-card);
+  background:rgba(255,255,255,.025);
+  border:1px solid var(--card-border);
+  backdrop-filter:blur(10px);
+  text-align:left;display:flex;gap:18px;
+  transition:border-color .25s, transform .25s, background .25s;
+}
+.feature:hover{border-color:rgba(20,191,230,.22);transform:translateY(-3px) scale(1.01);background:rgba(255,255,255,.04);}
+.feature .icon{
+  width:48px;height:48px;border-radius:12px;flex-shrink:0;
+  background:var(--cyan-dim);
+  border:1px solid rgba(20,191,230,.2);
+  display:flex;align-items:center;justify-content:center;
+}
+.feature .icon svg{width:22px;height:22px;stroke:var(--cyan);fill:none;stroke-width:1.8;}
+.feature h3{margin-bottom:8px;font-size:17px;}
+.feature p{font-size:14px;line-height:1.6;}
+
+/* ---------- CONTENT CAROUSEL ---------- */
+.video-row{position:relative;margin-top:24px;}
+.video-card{
+  width:340px;height:210px;border-radius:14px;flex-shrink:0;
+  position:relative;overflow:hidden;
+  background:linear-gradient(150deg,#161616,#0f0f0f);
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--card-border);
+}
+.video-card span{
+  position:absolute;bottom:12px;left:14px;
+  font-weight:600;font-size:13px;color:rgba(255,255,255,.8);
+  letter-spacing:-.01em;
+}
+.play-btn{
+  width:48px;height:48px;border-radius:50%;
+  background:rgba(20,191,230,.15);
+  border:1px solid rgba(20,191,230,.3);
+  backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.play-btn:hover{background:rgba(20,191,230,.25);}
+.play-btn svg{width:18px;height:18px;fill:var(--cyan);}
+
+/* ---------- PROCESS ---------- */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px;}
+.process-card{
+  background:rgba(255,255,255,.025);border-radius:var(--radius-card);
+  padding:24px;border:1px solid var(--card-border);
+  backdrop-filter:blur(10px);
+  transition:border-color .25s, transform .25s, background .25s;
+}
+.process-card:hover{border-color:rgba(20,191,230,.22);transform:translateY(-3px) scale(1.01);background:rgba(255,255,255,.04);}
+.step-num{
+  width:32px;height:32px;border-radius:8px;
+  background:var(--cyan);color:#000000;
+  font-weight:700;font-size:14px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+}
+.process-card h3{margin-bottom:8px;font-size:17px;}
+.process-card p{font-size:14px;}
+
+/* ---------- CLIENTS ---------- */
+.clients-head{text-align:center;margin-bottom:24px;}
+.logo-chip{
+  width:180px;height:80px;border-radius:10px;
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--card-border);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:600;font-size:13px;letter-spacing:.3px;
+  color:rgba(255,255,255,.5);
+  text-align:center;padding:0 10px;flex-shrink:0;
+  transition:border-color .2s, color .2s;
+}
+.logo-chip:hover{border-color:rgba(20,191,230,.2);color:rgba(255,255,255,.8);}
+.clients-rows .marquee{margin-bottom:8px;}
+
+/* ---------- SERVICES SECTION ---------- */
+.services-section{
+  padding:clamp(60px,7vw,90px) 0 clamp(70px,8vw,100px);
+  background:#000000;
+  position:relative;overflow:hidden;
+}
+.services-eyebrow{
+  font-size:11px;font-weight:600;color:var(--cyan);
+  text-align:center;letter-spacing:2.5px;text-transform:uppercase;
+  margin-bottom:12px;font-style:normal;
+}
+.services-section h2{
+  font-size:clamp(26px,3.8vw,42px);font-weight:700;
+  letter-spacing:-.02em;
+  text-align:center;color:#fff;margin-bottom:18px;
+}
+.services-look-btn{display:flex;justify-content:center;margin-bottom:48px;}
+.services-look-btn a{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--cyan);color:#000000;
+  padding:11px 24px;border-radius:999px;
+  font-size:13px;font-weight:600;letter-spacing:-.01em;
+  transition:all .2s var(--ease);
+}
+.services-look-btn a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(20,191,230,.3);}
+.services-look-btn a svg{width:16px;height:16px;stroke:#000000;fill:none;stroke-width:2.5;}
+
+.services-scroll-outer{position:relative;padding:0 clamp(14px,3vw,48px);}
+.services-scroll-outer::before,.services-scroll-outer::after{
+  content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;
+}
+.services-scroll-outer::before{left:0;background:linear-gradient(90deg,#000000,transparent);}
+.services-scroll-outer::after{right:0;background:linear-gradient(270deg,#000000,transparent);}
+
+.services-scroll{
+  display:flex;gap:14px;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;-ms-overflow-style:none;
+  padding:6px 0 20px;
+}
+.services-scroll::-webkit-scrollbar{display:none;}
+
+.svc-card{
+  flex:0 0 clamp(220px,30vw,260px);
+  background:var(--card);
+  border-radius:var(--radius-card);
+  overflow:hidden;scroll-snap-align:start;
+  display:flex;flex-direction:column;
+  border:1px solid var(--card-border);
+  transition:border-color .5s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.svc-card.is-centered{
+  border-color:rgba(255,255,255,0);
+  box-shadow:0 16px 40px rgba(0,0,0,.35);
+}
+.svc-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 36px rgba(20,191,230,.1);
+  border-color:rgba(20,191,230,.25);
+}
+.svc-card-img{
+  width:100%;height:170px;
+  background:linear-gradient(135deg,#161600 0%,#1e1e00 100%);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.svc-card-img .mock-email{
+  width:100px;background:#1e1e1e;border-radius:8px;
+  padding:8px 6px;box-shadow:0 4px 16px rgba(0,0,0,.5);
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);
+  border:1px solid rgba(255,255,255,.06);
+}
+.svc-card-img .mock-email .mock-header{height:26px;background:linear-gradient(90deg,#14BFE6,#0D99BC);border-radius:4px;margin-bottom:5px;}
+.svc-card-img .mock-email .mock-line{height:4px;background:rgba(255,255,255,.08);border-radius:2px;margin-bottom:3px;}
+.svc-card-img .mock-email .mock-line.short{width:60%;}
+.svc-card-img .mock-email .mock-cta{height:12px;background:#14BFE6;border-radius:3px;margin-top:6px;width:70%;}
+.svc-card-img .mock-phone{
+  width:70px;background:#111;border-radius:12px;padding:6px 4px;
+  box-shadow:0 6px 20px rgba(0,0,0,.6);position:absolute;
+  border:1px solid rgba(255,255,255,.06);
+}
+.svc-card-img .mock-phone .mock-screen{
+  background:linear-gradient(160deg,#14BFE6,#0D99BC);border-radius:6px;height:88px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:6px;
+}
+.svc-card-img .mock-phone .mock-screen .mock-p-line{height:3px;background:rgba(0,0,0,.3);border-radius:2px;width:80%;}
+.svc-card-img .mock-phone .mock-screen .mock-p-line.short{width:50%;}
+.svc-card-img .mock-phone.left{left:16%;top:14%;transform:rotate(-8deg);}
+.svc-card-img .mock-phone.right{right:16%;top:8%;transform:rotate(6deg);}
+.svc-card-img .mock-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:4px;width:116px;
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);
+}
+.svc-card-img .mock-grid .mg{height:52px;border-radius:6px;background:linear-gradient(135deg,#1e1e1e,#2a2a2a);}
+.svc-card-img .mock-grid .mg:nth-child(2){background:linear-gradient(135deg,#14BFE6,#0D99BC);}
+.svc-card-img .mock-grid .mg:nth-child(3){background:linear-gradient(135deg,#282800,#333300);}
+.svc-card-img .mock-grid .mg:nth-child(4){background:linear-gradient(135deg,#1a1a00,#222200);}
+.svc-card-img .mock-sms{
+  width:120px;background:#1e1e1e;border-radius:12px;padding:8px;
+  box-shadow:0 6px 20px rgba(0,0,0,.5);
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);
+  border:1px solid rgba(255,255,255,.06);
+}
+.svc-card-img .mock-sms .sms-bubble{
+  background:#2a2a2a;border-radius:8px 8px 8px 2px;padding:6px 8px;margin-bottom:4px;
+  font-size:7px;color:rgba(255,255,255,.65);font-weight:600;line-height:1.3;
+}
+.svc-card-img .mock-sms .sms-bubble.right{
+  background:#14BFE6;color:#000000;border-radius:8px 8px 2px 8px;text-align:right;
+}
+.svc-card-body{padding:18px 16px 20px;flex:1;display:flex;flex-direction:column;}
+.svc-card-body h3{font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-.02em;}
+.svc-card-body p{font-size:13px;color:var(--dim2);line-height:1.6;flex:1;}
+.svc-learn-btn{
+  display:inline-flex;align-items:center;margin-top:16px;
+  background:var(--cyan-dim);color:var(--cyan);
+  border:1px solid rgba(20,191,230,.2);
+  padding:8px 16px;border-radius:999px;
+  font-size:12px;font-weight:600;width:fit-content;
+  transition:all .2s var(--ease);
+}
+.svc-learn-btn:hover{background:var(--cyan);color:#000000;}
+.services-nav{display:flex;align-items:center;justify-content:space-between;padding:14px clamp(14px,3vw,48px) 0;}
+.svc-dots{display:flex;gap:6px;}
+.svc-dot{
+  width:8px;height:8px;border-radius:50%;background:rgba(20,191,230,.15);
+  cursor:pointer;transition:background .15s, transform .15s;border:none;padding:0;
+}
+.svc-dot.active{background:var(--cyan);transform:scale(1.2);}
+.svc-arrow{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(20,191,230,.25);background:var(--cyan-dim);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+  color:var(--cyan);font-size:16px;transition:all .2s var(--ease);
+}
+.svc-arrow:hover{background:var(--cyan);color:#000000;}
+.svc-deco{position:absolute;pointer-events:none;stroke:rgba(20,191,230,.07);fill:none;stroke-width:1;}
+
+/* ---------- BOOKING ---------- */
+.booking-wrap{margin-top:48px;display:flex;justify-content:center;}
+.booking-card{
+  display:flex;width:100%;max-width:860px;border-radius:var(--radius-card);overflow:hidden;
+  background:#111;border:1px solid var(--card-border);
+}
+.booking-left{flex:0 0 36%;padding:32px 28px;border-right:1px solid var(--card-border);}
+.booking-right{flex:1;padding:28px;min-width:0;}
+.avatar-circle{
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,var(--cyan),var(--cyan-dark));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:18px;color:#000000;margin-bottom:16px;
+}
+.booking-left h4{margin:0 0 4px;font-size:11px;color:var(--dim2);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;}
+.booking-left h3{font-size:20px;margin-bottom:16px;}
+.meta-row{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--dim);margin-bottom:8px;}
+.meta-row svg{width:16px;height:16px;stroke:var(--dim2);fill:none;stroke-width:1.8;flex-shrink:0;}
+.booking-left p.desc{font-size:13px;margin-top:16px;color:var(--dim2);}
+.booking-left .privacy{font-size:11px;color:var(--dim2);margin-top:20px;text-decoration:underline;display:inline-block;}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px;}
+.cal-head h4{font-size:15px;font-weight:700;margin:0;color:#fff;}
+.cal-nav{display:flex;gap:6px;}
+.cal-nav button{
+  width:26px;height:26px;border-radius:6px;
+  border:1px solid var(--card-border);background:none;color:#fff;cursor:pointer;
+  font-size:14px;
+}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center;}
+.cal-grid .dow{font-size:10px;color:var(--dim2);padding:3px 0;text-transform:uppercase;letter-spacing:.5px;}
+.cal-grid .day{font-size:12px;padding:7px 0;border-radius:6px;color:var(--dim2);cursor:pointer;transition:background .15s;}
+.cal-grid .day.avail{background:rgba(20,191,230,.1);color:var(--cyan);}
+.cal-grid .day.avail:hover{background:rgba(20,191,230,.18);}
+.cal-grid .day.sel{background:var(--cyan);color:#000000;font-weight:700;}
+.cal-grid .day.empty{visibility:hidden;}
+.tz-row{
+  margin-top:16px;display:flex;align-items:center;justify-content:space-between;
+  border:1px solid var(--card-border);border-radius:8px;padding:8px 12px;
+  font-size:12px;color:var(--dim2);flex-wrap:wrap;gap:6px;
+}
+
+/* ---------- TESTIMONIALS ---------- */
+.t-card{
+  width:340px;height:auto;min-height:210px;border-radius:var(--radius-card);
+  background:var(--card);padding:20px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  flex-shrink:0;border:1px solid var(--card-border);
+  transition:border-color .2s;
+}
+.t-card:hover{border-color:rgba(20,191,230,.18);}
+.t-card .stars{color:var(--cyan);font-size:13px;letter-spacing:2px;}
+.t-card p.quote{font-size:13.5px;color:var(--dim);margin:10px 0 0;line-height:1.6;}
+.t-person{display:flex;align-items:center;gap:10px;margin-top:14px;}
+.t-avatar{
+  width:36px;height:36px;border-radius:50%;background:var(--cyan);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#000000;
+}
+.t-name{font-size:14px;font-weight:700;color:#fff;}
+.t-role{font-size:12px;color:var(--dim2);}
+
+/* ---------- FAQ ---------- */
+.faq-panel{
+  background:#ececec;
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:28px;padding:48px;
+  display:flex;gap:40px;align-items:flex-start;
+}
+.faq-side{flex:0 0 270px;}
+.faq-side h2{
+  text-align:left;font-size:clamp(26px,3vw,32px);line-height:1.15;
+  color:#0a0a0a;margin-bottom:24px;
+}
+.faq-card{
+  background:#ffffff;border:1px solid #d9d9d9;border-radius:18px;
+  padding:22px 20px;text-align:center;
+}
+.faq-card p{font-size:14px;margin-bottom:16px;color:#555;line-height:1.4;}
+.faq-card .btn-outline{
+  display:block;width:100%;padding:13px 18px;border-radius:999px;
+  border:1.5px solid #0a0a0a;background:transparent;color:#0a0a0a;
+  font-family:var(--font);font-weight:700;font-size:14px;cursor:pointer;text-align:center;
+  transition:background .15s,color .15s;
+}
+.faq-card .btn-outline:hover{background:#0a0a0a;color:#fff;}
+.faq-list{flex:1;display:flex;flex-direction:column;gap:14px;min-width:0;}
+.faq-item{
+  background:#141414;border:1px solid var(--card-border);border-radius:18px;overflow:hidden;
+}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;color:#fff;
+  font-family:var(--font);font-size:16px;font-weight:500;
+  padding:20px 22px;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;cursor:pointer;
+}
+.faq-q .plus{
+  width:36px;height:36px;border-radius:50%;background:#fff;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;position:relative;transition:transform .25s;
+}
+.faq-q .plus:before,.faq-q .plus:after{content:"";position:absolute;background:#000000;}
+.faq-q .plus:before{width:14px;height:2px;}
+.faq-q .plus:after{width:2px;height:14px;}
+.faq-item.open .faq-q .plus{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px;}
+.faq-a p{font-size:15px;padding-bottom:22px;color:var(--dim);}
+
+/* ---------- CTA ---------- */
+.cta-section{position:relative;text-align:center;overflow:hidden;}
+.cta-section .glow{width:700px;height:240px;left:50%;top:20%;transform:translateX(-50%);}
+.cta-section h2{position:relative;z-index:2;}
+.cta-section p.sub{max-width:680px;margin:18px auto 0;font-size:clamp(15px,1.8vw,18px);position:relative;z-index:2;}
+.cta-section .fine{font-weight:600;color:#fff;display:block;margin-top:8px;font-size:14px;}
+.cta-section .btn-row{margin-top:32px;position:relative;z-index:2;}
+
+/* ---------- FOOTER ---------- */
+footer{padding:0;background:#000000;position:relative;overflow:hidden;}
+.footer-inner{padding:clamp(48px,6vw,64px) clamp(24px,4vw,48px) 0;position:relative;z-index:2;}
+.footer-brand{margin-bottom:10px;}
+.footer-brand .f-logo{
+  font-size:22px;font-weight:800;letter-spacing:-.03em;color:#fff;
+  display:inline-block;margin-bottom:10px;
+}
+.footer-brand .f-logo span{color:var(--cyan);}
+.footer-brand .f-tagline{font-size:13px;color:var(--dim2);max-width:240px;line-height:1.6;}
+.footer-cols{display:grid;grid-template-columns:1fr 1fr 1fr 1.4fr;gap:clamp(24px,4vw,40px);padding:clamp(36px,4vw,48px) 0 36px;}
+.footer-col h5{font-size:11px;font-weight:700;color:#fff;margin:0 0 16px;letter-spacing:1.5px;text-transform:uppercase;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul li a{font-size:13px;color:var(--dim2);transition:color .15s;}
+.footer-col ul li a:hover{color:#fff;}
+.footer-signup-label{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;}
+.footer-signup-sub{font-size:12px;color:var(--dim2);margin-bottom:14px;}
+.footer-signup-dots{display:flex;gap:5px;margin-bottom:14px;}
+.footer-signup-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.18);}
+.footer-signup-dots span.active{background:var(--cyan);}
+.footer-email-row{display:flex;border-radius:8px;overflow:hidden;border:1px solid var(--card-border);}
+.footer-email-row input{
+  flex:1;padding:12px 14px;background:#161616;border:none;
+  font-family:var(--font);font-size:13px;color:#fff;outline:none;min-width:0;
+}
+.footer-email-row input::placeholder{color:var(--dim2);}
+.footer-email-row button{
+  padding:12px 16px;background:var(--cyan);border:none;cursor:pointer;
+  font-family:var(--font);font-size:13px;font-weight:700;color:#000000;
+  display:flex;align-items:center;gap:4px;white-space:nowrap;transition:opacity .15s;
+}
+.footer-email-row button:hover{opacity:.88;}
+.footer-no-spam{font-size:11px;color:rgba(255,255,255,.25);margin-top:7px;}
+.footer-mid-divider{border:none;border-top:1px solid var(--card-border);margin:0;}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px clamp(24px,4vw,48px);font-size:11px;color:var(--dim2);
+  flex-wrap:wrap;gap:10px;position:relative;z-index:2;
+}
+.footer-bottom a{color:var(--dim2);transition:color .15s;}
+.footer-bottom a:hover{color:#fff;}
+.footer-bottom-links{display:flex;gap:18px;flex-wrap:wrap;}
+.footer-wordmark{
+  position:relative;z-index:1;text-align:left;line-height:0.85;
+  pointer-events:none;padding:0 0 0 20px;margin-top:-8px;
+  overflow:hidden;
+}
+.footer-wordmark span{
+  font-size:clamp(80px,14vw,200px);font-weight:900;
+  color:var(--cyan);opacity:.1;letter-spacing:-6px;
+  font-family:var(--font);display:block;
+}
+.footer-wordmark .reg{font-size:clamp(28px,4.5vw,68px);vertical-align:super;letter-spacing:0;}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS — FULL COVERAGE
+   ============================================================ */
+
+/* ---- Tablet landscape (≤1100px) ---- */
+@media(max-width:1100px){
+  .process-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-cols{grid-template-columns:1fr 1fr;}
+}
+
+/* ---- Tablet portrait (≤900px) ---- */
+@media(max-width:900px){
+  nav,.nav-actions .btn-small{display:none;}
+  .burger{display:flex;}
+  .feature-grid{grid-template-columns:repeat(2,1fr);}
+  .booking-card{flex-direction:column;}
+  .booking-left{flex:none;border-right:none;border-bottom:1px solid var(--card-border);}
+  .faq-panel{flex-direction:column;padding:32px;}
+  .faq-side{flex:none;width:100%;}
+  .footer-wordmark span{font-size:20vw;}
+  .services-scroll-outer{padding:0 16px;}
+  .svc-card{flex:0 0 clamp(200px,70vw,260px);}
+}
+
+/* ---- Mobile large (≤680px) ---- */
+@media(max-width:680px){
+  .feature-grid{grid-template-columns:1fr;}
+  .process-grid{grid-template-columns:1fr;}
+  .footer-cols{grid-template-columns:1fr 1fr;}
+  .faq-panel{padding:24px 18px;}
+
+  /* hero buttons stack vertically on mobile */
+  .hero .btn-row{flex-direction:column;align-items:center;}
+  .hero .btn-row .btn{width:100%;max-width:320px;}
+
+  /* all other button rows stack too */
+  .btn-row{flex-direction:column;align-items:center;}
+  .btn-row .btn{width:100%;max-width:320px;justify-content:center;}
+}
+
+/* ---- Mobile small (≤480px) ---- */
+@media(max-width:480px){
+  header{top:12px;padding:0 12px;}
+  .nav-wrap{padding:10px 10px 10px 18px;}
+  .logo{font-size:15px;}
+  .hero{padding:clamp(100px,16vw,140px) 0 clamp(48px,6vw,64px);}
+  .hero h1{letter-spacing:-.04em;}
+  .hero p.sub{font-size:15px;}
+  .section-pad{padding:56px 0;}
+  .container{padding:0 16px;}
+  .feature{flex-direction:column;gap:12px;}
+  .feature .icon{width:40px;height:40px;}
+  .booking-left{padding:22px 18px;}
+  .booking-right{padding:20px 16px;}
+  .footer-cols{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .footer-bottom-links{gap:14px;}
+  .footer-wordmark span{font-size:26vw;}
+  .faq-panel{padding:18px 14px;}
+  .services-scroll-outer{padding:0 10px;}
+  .svc-card{flex:0 0 85vw;}
+  .t-card{width:80vw;}
+  .cal-grid .day{padding:5px 0;font-size:11px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="nav-wrap">
+    <a href="#top" class="logo">
+      Laya<span>&nbsp;Consulting</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#help">Benefits</a></li>
+        <li><a href="#videoTrack1">Tutorials</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#scope">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="#book" class="btn btn-small">Book a Call</a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" id="closeNav">&times;</button>
+  <a href="#help">Services</a>
+  <a href="#process">Process</a>
+  <a href="#scope">Scope of Work</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#faq">FAQ</a>
+  <a href="#book" class="btn">Book a Call</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-mesh"></div>
+  <div class="hero-inner">
+    <h1>We grow 7 and 8-figure ecom brands through
+      <span class="circled">retention
+        <svg viewBox="0 0 200 70" preserveAspectRatio="none"><ellipse cx="100" cy="35" rx="98" ry="32"/></svg>
+      </span> &amp; lifecycle systems</h1>
+    <p class="sub">Start scaling your brand at a profit with an ever-evolving automated email &amp; SMS strategy tailored to your business.</p>
+    <div class="btn-row">
+      <a href="#book" class="btn">Book a Call</a>
+      <a href="#scope" class="btn btn-ghost">Read More</a>
+    </div>
+  </div>
+
+  <div class="logo-strip">
+    <div class="marquee">
+      <div class="track" id="adTrack1"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW WE HELP ================= -->
+<section class="section-pad reveal" id="help" style="padding-bottom:48px;">
+  <div class="container">
+    <p class="eyebrow">How We Can Help You</p>
+    <div class="section-head"><h2>We Live and Breath Loyalty and Retention</h2></div>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6"/><circle cx="18" cy="9" r="2.4"/><path d="M16 21c0-2.6 1.6-4 4-4"/></svg></div>
+        <div>
+          <h3>Speedy Communication &amp; Turn Around Times</h3>
+          <p>Hate slow communication with big agencies? Us too! That's why we get back to clients same day&hellip; always. And we are able to make changes and adapt to your marketing timelines and objectives.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <div>
+          <h3>High Converting Content Production</h3>
+          <p>Right now we output over 100 campaigns per week for brands across different verticals. We've sent so many across different niches so we know the DNA of what makes a high converting piece.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg></div>
+        <div>
+          <h3>Data-Driven Approach To Retention</h3>
+          <p>We conduct and track tests on a weekly basis to ensure real optimisation, decisions are made through data not hypothesis. The team also has vast experience to draw from to ensure faster progression of accounts.</p>
+        </div>
+      </div>
+    </div>
+    <div class="center-btn"><a href="#book" class="btn">Book a Call</a></div>
+  </div>
+</section>
+
+<!-- ================= CONTENT CAROUSEL ================= -->
+<section class="reveal" style="padding:40px 0 48px;">
+  <div class="container" style="padding-bottom:0;">
+    <div class="section-head"><h2>Discover Our Content</h2></div>
+  </div>
+  <div class="video-row" style="margin-top:24px;">
+    <div class="marquee">
+      <div class="track" id="videoTrack1" style="gap:16px;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="section-pad reveal" id="process" style="position:relative;overflow:hidden;padding-bottom:48px;">
+  <span class="glow" style="width:560px;height:140px;left:65%;top:0;"></span>
+  <div class="container" style="position:relative;z-index:2;">
+    <p class="eyebrow">Our Process</p>
+    <div class="section-head"><h2>Our Streamlined Process Bringing You From Concept to Creation</h2></div>
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="step-num">1</div>
+        <h3>Auditing and onboarding</h3>
+        <p>We carefully review your existing email data to formulate a plan of attack with accurate KPIs to look for and precise timelines on when we expect to achieve them by.</p>
+      </div>
+      <div class="process-card">
+        <div class="step-num">2</div>
+        <h3>Account set up</h3>
+        <p>Unlike most agencies that focus on setting up flows first and then campaigns, our team moves fast and executes on flows and campaigns in parallel, hence why we are super fast to deliver results.</p>
+      </div>
+      <div class="process-card">
+        <div class="step-num">3</div>
+        <h3>Growth and optimisation</h3>
+        <p>Once we get the account to a solid baseline, we consistently produce fresh content and run split tests on flows to drive long-term performance improvements.</p>
+      </div>
+      <div class="process-card">
+        <div class="step-num">4</div>
+        <h3>Long-term vision</h3>
+        <p>In addition to micro-level metrics, we focus on improving macro-level KPIs like LTV, repeat purchase rate, and churn rate, which sets us apart from other retention partners. This is what true retention marketing is.</p>
+      </div>
+    </div>
+    <div class="center-btn"><a href="#book" class="btn">Book a Call</a></div>
+  </div>
+</section>
+
+<!-- ================= CLIENTS ================= -->
+<section class="reveal" style="padding:40px 0 48px;">
+  <div class="container clients-head">
+    <p class="eyebrow" style="margin-bottom:8px;">Clients</p>
+    <h2 style="font-size:32px;">Clients We&rsquo;ve Worked With</h2>
+  </div>
+  <div class="clients-rows" style="margin-top:48px;">
+    <div class="marquee"><div class="track" id="logoTrack1"></div></div>
+    <div class="marquee reverse"><div class="track" id="logoTrack2"></div></div>
+  </div>
+</section>
+
+<!-- ================= SERVICES (SCOPE OF WORK) ================= -->
+<section class="services-section reveal" id="scope" style="padding-top:60px;">
+
+  <!-- deco diagonal lines (SVG, purely decorative) -->
+  <svg class="svc-deco" style="top:38%;left:18%;width:60px;height:60px;" viewBox="0 0 60 60"><line x1="0" y1="60" x2="60" y2="0"/></svg>
+  <svg class="svc-deco" style="top:62%;left:48%;width:60px;height:60px;" viewBox="0 0 60 60"><line x1="0" y1="60" x2="60" y2="0"/></svg>
+  <!-- deco circles -->
+  <div style="position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(20,191,230,.06);top:52%;right:-60px;pointer-events:none;"></div>
+  <div style="position:absolute;width:120px;height:120px;border-radius:50%;background:rgba(20,191,230,.05);bottom:8%;left:-40px;pointer-events:none;"></div>
+
+  <p class="services-eyebrow">The proofs in the pudding…</p>
+  <h2>Our Services</h2>
+
+  <div class="services-look-btn">
+    <a href="#book">Take A Look
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8l4 4-4 4M8 12h8"/></svg>
+    </a>
+  </div>
+
+  <div class="services-scroll-outer">
+    <div class="services-scroll" id="svcScroll">
+
+      <!-- Card 1: Email Campaigns -->
+      <div class="svc-card">
+        <div class="svc-card-img">
+          <div class="mock-email">
+            <div class="mock-header"></div>
+            <div class="mock-line"></div>
+            <div class="mock-line short"></div>
+            <div class="mock-line"></div>
+            <div class="mock-line short"></div>
+            <div class="mock-cta"></div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <h3>Email Campaigns</h3>
+          <p>Captivating newsletters and promotions that drive engagement.</p>
+          <a href="#book" class="svc-learn-btn">Learn more</a>
+        </div>
+      </div>
+
+      <!-- Card 2: Design -->
+      <div class="svc-card">
+        <div class="svc-card-img" style="background:linear-gradient(135deg,#0e1a0e 0%,#1a2a14 100%);">
+          <div class="mock-phone left">
+            <div class="mock-screen">
+              <div class="mock-p-line"></div>
+              <div class="mock-p-line short"></div>
+              <div class="mock-p-line"></div>
+            </div>
+          </div>
+          <div class="mock-phone right">
+            <div class="mock-screen" style="background:linear-gradient(160deg,#1a4a56,#2a6a7a);">
+              <div class="mock-p-line"></div>
+              <div class="mock-p-line short"></div>
+            </div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <h3>Design</h3>
+          <p>Stunning visuals that stand out in the inbox and leave a lasting impression.</p>
+          <a href="#book" class="svc-learn-btn">Learn more</a>
+        </div>
+      </div>
+
+      <!-- Card 3: Email Flow -->
+      <div class="svc-card">
+        <div class="svc-card-img" style="background:linear-gradient(135deg,#111118 0%,#1a1a28 100%);">
+          <div class="mock-grid">
+            <div class="mg"></div>
+            <div class="mg"></div>
+            <div class="mg"></div>
+            <div class="mg"></div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <h3>Email Flow</h3>
+          <p>Automated sequences to guide customers through their journey.</p>
+          <a href="#book" class="svc-learn-btn">Learn more</a>
+        </div>
+      </div>
+
+      <!-- Card 4: Copywriting -->
+      <div class="svc-card">
+        <div class="svc-card-img" style="background:linear-gradient(135deg,#0e1a0a 0%,#1a2a10 100%);">
+          <div class="mock-sms">
+            <div class="sms-bubble">New kudos items &amp; Exclusive items 🎉</div>
+            <div class="sms-bubble right">Monthly Giveaways</div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <h3>Copywriting</h3>
+          <p>Compelling messages that inspire action and resonate with your audience.</p>
+          <a href="#book" class="svc-learn-btn">Learn more</a>
+        </div>
+      </div>
+
+      <!-- Card 5: SMS Marketing -->
+      <div class="svc-card">
+        <div class="svc-card-img" style="background:linear-gradient(135deg,#1a1500 0%,#2a2200 100%);">
+          <div class="mock-email">
+            <div class="mock-header" style="background:linear-gradient(90deg,#14BFE6,#0D99BC);"></div>
+            <div class="mock-line"></div>
+            <div class="mock-line short"></div>
+            <div class="mock-line"></div>
+            <div class="mock-cta" style="background:#14BFE6;"></div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <h3>SMS Marketing</h3>
+          <p>Direct, high-converting text messages that reach your customers instantly.</p>
+          <a href="#book" class="svc-learn-btn">Learn more</a>
+        </div>
+      </div>
+
+      <!-- Card 6: Account Strategy -->
+      <div class="svc-card">
+        <div class="svc-card-img" style="background:linear-gradient(135deg,#1a0a1a 0%,#2a1028 100%);">
+          <div class="mock-grid" style="width:120px;">
+            <div class="mg" style="background:linear-gradient(135deg,#7a1a7a,#9a3a9a);"></div>
+            <div class="mg" style="background:linear-gradient(135deg,#14BFE6,#0D99BC);"></div>
+            <div class="mg" style="background:linear-gradient(135deg,#1a4a56,#2a6a7a);height:30px;"></div>
+            <div class="mg" style="background:linear-gradient(135deg,#7a1a7a,#9a3a9a);height:30px;"></div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <h3>Account Strategy</h3>
+          <p>Full retention strategy built around your brand's goals, audience, and growth stage.</p>
+          <a href="#book" class="svc-learn-btn">Learn more</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- dots + arrow nav -->
+  <div class="services-nav">
+    <div class="svc-dots">
+      <button class="svc-dot active" data-idx="0"></button>
+      <button class="svc-dot" data-idx="1"></button>
+      <button class="svc-dot" data-idx="2"></button>
+      <button class="svc-dot" data-idx="3"></button>
+    </div>
+    <button class="svc-arrow" id="svcArrow">&#8594;</button>
+  </div>
+
+  <script>
+  (function(){
+    const scroll = document.getElementById('svcScroll');
+    const dots = document.querySelectorAll('.svc-dot');
+    const arrow = document.getElementById('svcArrow');
+    const cards = scroll.querySelectorAll('.svc-card');
+    let current = 0;
+    const cardW = () => scroll.querySelector('.svc-card').offsetWidth + 14;
+    function goTo(idx){
+      current = Math.max(0, Math.min(idx, dots.length - 1));
+      scroll.scrollTo({left: current * cardW(), behavior:'smooth'});
+      dots.forEach((d,i)=>d.classList.toggle('active', i===current));
+    }
+    dots.forEach(d => d.addEventListener('click', ()=> goTo(+d.dataset.idx)));
+    arrow.addEventListener('click', ()=> goTo(current < dots.length - 1 ? current + 1 : 0));
+    scroll.addEventListener('scroll', ()=>{
+      const idx = Math.round(scroll.scrollLeft / cardW());
+      dots.forEach((d,i)=>d.classList.toggle('active', i===idx));
+      current = idx;
+    });
+
+    /* fade the border of whichever card sits nearest the scroller's center */
+    function updateCentered(){
+      const rect = scroll.getBoundingClientRect();
+      const center = rect.left + rect.width / 2;
+      let closest = null, closestDist = Infinity;
+      cards.forEach(card=>{
+        const cRect = card.getBoundingClientRect();
+        const cCenter = cRect.left + cRect.width / 2;
+        const dist = Math.abs(cCenter - center);
+        if(dist < closestDist){ closestDist = dist; closest = card; }
+      });
+      cards.forEach(card => card.classList.toggle('is-centered', card === closest));
+    }
+    scroll.addEventListener('scroll', updateCentered, { passive: true });
+    window.addEventListener('resize', updateCentered);
+    updateCentered();
+  })();
+  </script>
+
+</section>
+
+<!-- ================= BOOKING ================= -->
+<section class="section-pad reveal" id="book">
+  <div class="container">
+    <div class="section-head"><h2>Book Your Intro Call</h2></div>
+    <div class="booking-wrap">
+      <div class="booking-card">
+        <div class="booking-left">
+          <div class="avatar-circle">NO</div>
+          <h4>LAYA CONSULTING</h4>
+          <h3>Nicolas Olaya</h3>
+          <h3 style="font-size:18px;color:var(--dim);font-weight:500;margin-bottom:18px;">Growth Demo</h3>
+          <div class="meta-row"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 30 min</div>
+          <div class="meta-row"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="12" rx="2"/><path d="M17 10l4-2v8l-4-2"/></svg> Web conferencing details provided upon confirmation.</div>
+          <p class="desc">This growth demo is perfectly fit for brands who want a steady way of increasing sales.</p>
+          <a href="#" class="privacy">Privacy Policy</a>
+        </div>
+        <div class="booking-right">
+          <div class="cal-head">
+            <h4>Select a Date &amp; Time</h4>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <span style="font-size:14px;color:var(--dim);">June 2026</span>
+              <div class="cal-nav"><button>&lsaquo;</button><button>&rsaquo;</button></div>
+            </div>
+          </div>
+          <div class="cal-grid" id="calGrid"></div>
+          <div class="tz-row"><span>Time zone</span><span>Pakistan Standard Time (GMT+5)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section-pad reveal" id="testimonials">
+  <div class="container clients-head">
+    <p class="eyebrow" style="margin-bottom:8px;">Testimonials</p>
+    <h2>What Other Clients Have to Say About Working with Laya Consulting</h2>
+  </div>
+  <div style="margin-top:48px;">
+    <div class="marquee"><div class="track" id="tTrack1"></div></div>
+    <div class="marquee reverse" style="margin-top:16px;"><div class="track" id="tTrack2"></div></div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section-pad reveal" id="faq">
+  <div class="container">
+    <div class="faq-panel">
+      <div class="faq-side">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-card">
+          <p>Any more questions?<br>Reach us for more</p>
+          <a href="#book" class="btn-outline">Ask More Questions</a>
+        </div>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <button class="faq-q"><span>Do you guys offer guarantees?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>We can't guarantee specific revenue numbers since results depend on your product, list size and offer &mdash; but we do guarantee our process, our speed of execution, and that we'll always act in the best interest of your account's long-term growth.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Will email/ SMS marketing 100% work for me?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Email and SMS marketing works for almost every ecommerce brand because you already own that audience. The only thing that changes is the strategy &mdash; which is exactly why we start every relationship with a full audit before building anything.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Do you guys have long contracts?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>No. We work on a rolling, month-to-month basis. We earn the right to keep working with you every single month through results, not through a contract that locks you in.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>How do I know that you guys will get me results?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>We track everything &mdash; open rates, click rates, conversion rates and revenue attributed to each flow and campaign &mdash; and share it transparently every week so you always know exactly how the account is performing.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Will I be assigned some random email marketer from Fiverr with bad English?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Not at all. Every strategist, copywriter and designer on our team is vetted, trained in-house, and a native English speaker who specialises in DTC ecommerce brands &mdash; not a generalist freelancer.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="section-pad cta-section reveal">
+  <span class="glow"></span>
+  <div class="container">
+    <h2>Book Your Intro Call</h2>
+    <p class="sub">Ready to unlock profitable growth? Book your intro call with Laya Consulting today and discover the power of targeted email and SMS marketing for your business.
+      <span class="fine">No obligation to sign up &ndash; come prepared with questions.</span>
+    </p>
+    <div class="btn-row"><a href="#book" class="btn">Book a Call</a></div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-inner">
+    <!-- Brand tagline -->
+    <div class="footer-brand">
+      <a href="#top" class="f-logo">Laya<span>Consulting</span><span style="font-size:0.4em;vertical-align:super;">®</span></a>
+      <p class="f-tagline">Laya Consulting is a retention-first email &amp; SMS marketing agency that specialises in ecommerce brands.</p>
+    </div>
+
+    <!-- 4-col grid -->
+    <div class="footer-cols">
+      <!-- Nav -->
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#help">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#scope">Scope of Work</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#scope">Copywriting</a></li>
+          <li><a href="#scope">Graphic Production</a></li>
+          <li><a href="#scope">Content Strategy</a></li>
+          <li><a href="#scope">Email &amp; SMS Deployment</a></li>
+          <li><a href="#scope">Flow Building</a></li>
+          <li><a href="#scope">Campaign Management</a></li>
+          <li><a href="#scope">Account Auditing</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#testimonials">Case Studies</a></li>
+          <li><a href="#book">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Email signup -->
+      <div class="footer-col">
+        <div class="footer-signup-label">Now it's time to scale.</div>
+        <div class="footer-signup-sub">Join our free community</div>
+        <div class="footer-signup-dots">
+          <span class="active"></span><span></span><span></span>
+        </div>
+        <div class="footer-email-row">
+          <input type="email" placeholder="Your email" />
+          <button type="button">Submit &nbsp;&#8594;</button>
+        </div>
+        <p class="footer-no-spam">No spam. We respect your privacy.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="footer-mid-divider" />
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <span>&copy; Laya Consulting 2025. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Earnings Disclaimer</a>
+    </div>
+  </div>
+
+  <!-- Giant background wordmark -->
+  <div class="footer-wordmark">
+    <span>laya<span class="reg">®</span></span>
+  </div>
+</footer>
+
+<script>
+/* ---------------- mobile nav ---------------- */
+const burgerBtn = document.getElementById('burgerBtn');
+const mobileNav = document.getElementById('mobileNav');
+const closeNav = document.getElementById('closeNav');
+burgerBtn.addEventListener('click', ()=> mobileNav.classList.add('open'));
+closeNav.addEventListener('click', ()=> mobileNav.classList.remove('open'));
+mobileNav.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> mobileNav.classList.remove('open')));
+
+/* ---------------- FAQ accordion ---------------- */
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  if(item.classList.contains('open')){ a.style.maxHeight = a.scrollHeight + 'px'; }
+  q.addEventListener('click', ()=>{
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+window.addEventListener('resize', ()=>{
+  document.querySelectorAll('.faq-item.open .faq-a').forEach(a=> a.style.maxHeight = a.scrollHeight + 'px');
+});
+
+/* ---------------- build marquees ---------------- */
+const brands = ["PERIOD","CULK","KAHMLI","DECATHLON","DEAD OR ALIVE COFFEE","LBL","PBK","OUATE PARIS","BEAUGEN","O5","PHARMAFREAK","MAYU WATER","JUVEL SKINCARE","REERTH","RAW BEAUTY LAB","ROCCOCO","SHAKA LOVE","PERNOIRE","BAABUK","SYNCWIRE","VINTAGE LUXE UP","DYLN","ZOE'S CHOCOLATE","SAFE DOG CHEW CO.","NODSPARK","SD PHARMACEUTICALS"];
+
+function fillTrack(el, count, builder){
+  let html = '';
+  for(let r=0; r<2; r++){
+    for(let i=0;i<count;i++){ html += builder(i); }
+  }
+  el.innerHTML = html;
+}
+
+fillTrack(document.getElementById('logoTrack1'), brands.length, (i)=>`<div class="logo-chip">${brands[i]}</div>`);
+fillTrack(document.getElementById('logoTrack2'), brands.length, (i)=>`<div class="logo-chip">${brands[brands.length-1-i]}</div>`);
+
+const adNames = ["DYLN — Bye-Bye Oxidative Stress","Wrecked x Adam Is Here","Neptune — Better After 45","Limeapple — Where Style Meets Smiles","Baabuk — Who It's For","DAO Labs","PBK Wellness","Decathlon Drop"];
+fillTrack(document.getElementById('adTrack1'), adNames.length, (i)=>`<div class="ad-card"><span>${adNames[i]}</span></div>`);
+
+const videoNames = ["Founder Q&A: Scaling Past 7-Figures","Inside Our Flow Build Process","Anatomy of a Winning Campaign","Client Spotlight: 3x Revenue in 90 Days","Why Most Agencies Get Retention Wrong","How We Audit a New Account","Behind the Scenes: Content Production","SMS Strategy Breakdown","Reading Klaviyo Reports Like a Pro","From Onboarding to Optimisation"];
+fillTrack(document.getElementById('videoTrack1'), videoNames.length, (i)=>`
+  <div class="video-card">
+    <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg></div>
+    <span>${videoNames[i]}</span>
+  </div>`);
+
+const testimonials = [
+  {n:"Sarah M.", r:"Founder, Skincare Brand", q:"Laya completely transformed our flows. Email now drives over 30% of our monthly revenue and the turnaround time is unreal."},
+  {n:"James K.", r:"Growth Lead, Supplements Co.", q:"Same-day responses, sharp copy, and they actually understand DTC. Best agency partner we've had, hands down."},
+  {n:"Priya R.", r:"CMO, Apparel Brand", q:"The reporting alone sets them apart — we finally know exactly what's driving revenue every single week."},
+  {n:"Daniel F.", r:"Founder, Pet Care Brand", q:"We doubled our retention revenue in under 90 days. The process they run is genuinely systematic, not guesswork."},
+  {n:"Aisha T.", r:"Ecom Manager, Beauty Brand", q:"No long contracts, no fluff, just consistent results month over month. Couldn't recommend them more."},
+  {n:"Marco V.", r:"Founder, Coffee Brand", q:"Their content team ships fast without sacrificing quality — our open rates have never looked better."},
+  {n:"Elena S.", r:"Head of Marketing, Wellness Co.", q:"Laya treats our account like it's their own brand. That level of ownership is rare in this industry."}
+];
+function tCard(t){
+  const initials = t.n.split(' ').map(s=>s[0]).join('');
+  return `<div class="t-card">
+    <div>
+      <div class="stars">★★★★★</div>
+      <p class="quote">&ldquo;${t.q}&rdquo;</p>
+    </div>
+    <div class="t-person">
+      <div class="t-avatar">${initials}</div>
+      <div><div class="t-name">${t.n}</div><div class="t-role">${t.r}</div></div>
+    </div>
+  </div>`;
+}
+fillTrack(document.getElementById('tTrack1'), testimonials.length, (i)=>tCard(testimonials[i]));
+fillTrack(document.getElementById('tTrack2'), testimonials.length, (i)=>tCard(testimonials[testimonials.length-1-i]));
+
+/* ---------------- booking calendar mock ---------------- */
+(function(){
+  const grid = document.getElementById('calGrid');
+  const dows = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  let html = dows.map(d=>`<div class="dow">${d}</div>`).join('');
+  const firstDow = 1; // June 1 2026 is a Monday
+  const daysInMonth = 30;
+  const available = [3,4,5,9,10,11,12,16,17,18,19,23,24,25,26];
+  for(let i=0;i<firstDow;i++){ html += `<div class="day empty"></div>`; }
+  for(let d=1; d<=daysInMonth; d++){
+    let cls = 'day';
+    if(available.includes(d)) cls += ' avail';
+    if(d===11) cls += ' sel';
+    html += `<div class="${cls}">${d}</div>`;
+  }
+  grid.innerHTML = html;
+  grid.querySelectorAll('.day.avail').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      grid.querySelectorAll('.day').forEach(d=>d.classList.remove('sel'));
+      el.classList.add('sel');
+    });
+  });
+})();
+
+/* ---------------- scroll-reveal ---------------- */
+(function(){
+  const targets = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    targets.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(el => io.observe(el));
+})();
+
+/* ---------------- header glass on scroll ---------------- */
+(function(){
+  const navWrap = document.querySelector('.nav-wrap');
+  if(!navWrap) return;
+  function onScroll(){
+    if(window.scrollY > 24){
+      navWrap.style.background = 'rgba(10,10,10,.78)';
+      navWrap.style.borderColor = 'rgba(255,255,255,.12)';
+    } else {
+      navWrap.style.background = 'rgba(10,10,10,.5)';
+      navWrap.style.borderColor = 'rgba(255,255,255,.08)';
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+</body>
+</html>
